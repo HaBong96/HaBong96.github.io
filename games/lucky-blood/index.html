@@ -40,7 +40,7 @@
         </div>
         <div class="player-bar">
           <span>처음 받을 때 약 40MB</span>
-          <a href="play/" target="_blank" rel="noopener">전체 화면 ↗</a>
+          <a href="play/?v=20261021005159" target="_blank" rel="noopener">전체 화면 ↗</a>
         </div>
       </div>
       <div style="display:grid;gap:1.25rem">
@@ -48,14 +48,14 @@
           <h3>조작 (한 손)</h3>
           <table>
             <tr><th>왕 이동</th><td>화면을 터치한 곳으로 왕이 달려가고, 병사 · 영웅이 따라가며 알아서 싸워요</td></tr>
-            <tr><th>강화</th><td>내 캐슬을 눌러 돈으로 병사 · 캐슬 · 마법 강화</td></tr>
+            <tr><th>강화</th><td>내 캐슬이나 위쪽 내 왕국 칸을 눌러 돈으로 새 병사 · 캐슬 강화</td></tr>
             <tr><th>영웅</th><td>왼쪽 아래 영웅 칸을 누르면 정보 → [소환] (보석은 공통 미션으로)</td></tr>
             <tr><th>스킬</th><td>덱의 스킬 2개: 마법은 내 영지 안에서만 (수비), 방책은 광장 · 길에도 세움 (돈을 내고 써요)</td></tr>
-            <tr><th>왕국 줄</th><td>위쪽 가운데: 다른 왕국 = 동맹 신청 · 배신, 내 왕국 = 어디서든 강화, 트로피 = 실시간 순위</td></tr>
+            <tr><th>왕국 줄</th><td>위쪽 왕국 6칸: 다른 왕국 = 동맹 신청 · 배신, 내 왕국 = 어디서든 강화 · 지도 아래 [순위] = 실시간 순위</td></tr>
             <tr><th>집결</th><td>깃발 버튼: 싸움을 멈추고 모두 왕에게 달려와요</td></tr>
             <tr><th>업그레이드</th><td>포인트가 모일 때마다 카드 3장 — 진화 · 전직 · 특성 (끝없이)</td></tr>
           </table>
-          <p class="soon" style="margin:.6rem 0 0">처음 켜면 튜토리얼부터 시작해요. 휴대폰은 <a href="play/" target="_blank" rel="noopener">전체 화면</a>이 가장 편해요.</p>
+          <p class="soon" style="margin:.6rem 0 0">처음 켜면 튜토리얼부터 시작해요. 휴대폰은 <a href="play/?v=20261021005159" target="_blank" rel="noopener">전체 화면</a>이 가장 편해요.</p>
         </div>
         <div class="box panel">
           <h3>게임 정보</h3>
@@ -175,7 +175,7 @@
   document.getElementById("start").addEventListener("click", function () {
     var screen = document.getElementById("screen");
     var frame = document.createElement("iframe");
-    frame.src = "play/";
+    frame.src = "play/?v=20261021005159";
     frame.title = "운빨블러드 게임";
     frame.allow = "autoplay; fullscreen; gamepad";
     screen.replaceChildren(frame);
