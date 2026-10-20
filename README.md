@@ -15,7 +15,7 @@ https://habong96.github.io — 직접 기획하고 만든 도트 게임을 브�
 
 ## 게임 올리기
 
-- 픽셀런 다이노: 게임 저장소(PixelRun)에서 `python tools/publish_site.py --godot <Godot 4.7.2 경로>` → 이 저장소에서 커밋 · 푸시
+- 픽셀런 다이노 · 은하수 낚시: 게임 저장소(PixelRun)에서 `python tools/publish_site.py --godot <Godot 4.7.2 경로> [pixelrun-dino | galaxy-fishing]` → 이 저장소에서 커밋 · 푸시
 - 새 게임: `games/<새 게임>/`을 만들고 `index.html` 게임 카드에 한 장 추가
 
 ## 미리 보기

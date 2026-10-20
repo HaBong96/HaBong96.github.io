@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>은하수 낚시 · Habong</title>
+<meta name="description" content="은하수 호수에서 별자리 물고기를 낚는 도트 낚시 게임. 보스는 마구 탭해서 기절시켜야 잡혀요. 브라우저에서 바로 플레이.">
+<meta property="og:title" content="은하수 낚시 · Galaxy Fishing">
+<meta property="og:description" content="은하수 호수에서 별자리 물고기를 낚는 도트 낚시 게임">
+<meta property="og:image" content="https://habong96.github.io/games/galaxy-fishing/img/fish_land.png">
+<link rel="icon" href="play/index.icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../../">Ha<span>bong</span></a>
+    <nav class="nav" aria-label="메뉴">
+      <a href="#play">플레이</a>
+      <a href="#design">기획 포인트</a>
+      <a href="#history">만든 과정</a>
+      <a href="#shots">스크린샷</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="play" style="padding-top:2rem">
+    <h1>은하수 낚시</h1>
+    <div class="tags"><span class="tag">낚시</span><span class="tag">수집 · 강화</span><span class="tag">보스 기절 연타</span><span class="tag">물고기 24종</span><span class="tag">한국어 · English</span></div>
+    <p class="lead">밤하늘이 비치는 은하수 호수에서 별자리 물고기를 낚아요. 조작은 길게 누르기와 탭뿐이고, 보스 물고기는 끌어올릴 때 마구 탭해서 기절시켜야 잡혀요.</p>
+
+    <div class="box player">
+      <div class="screen" id="screen">
+        <img src="img/fish_land.png" width="960" height="540" alt="은하수 낚시: 물고기를 낚아 올리는 장면">
+        <div class="start"><button class="btn" id="start" type="button">▶ 여기서 플레이</button></div>
+      </div>
+      <div class="player-bar">
+        <span>처음 받을 때 약 45MB · 기록은 이 브라우저에 저장돼요</span>
+        <a href="play/" target="_blank" rel="noopener">전체 화면으로 열기 ↗</a>
+      </div>
+    </div>
+    <p class="soon" style="margin-top:.8rem">휴대폰에서는 가로로 돌리고 <a href="play/" target="_blank" rel="noopener">전체 화면</a>으로 하는 게 가장 편해요.</p>
+
+    <div class="cols" style="margin-top:1rem">
+      <div class="box panel">
+        <h3>조작</h3>
+        <table>
+          <tr><th>던지기</th><td>길게 눌러 힘을 모으고 손 떼기<br>세게 던질수록 먼 구역 (희귀 · 보스)</td></tr>
+          <tr><th>입질</th><td>찌가 쏙 들어가고 "!"가 뜰 때 탭<br>톡톡 건드리는 가짜 입질에 누르면 도망가요</td></tr>
+          <tr><th>감기</th><td>누르고 있으면 감기 · 장력이 올라요<br>물고기가 몸부림칠 땐(!!) 손 떼기</td></tr>
+          <tr><th>보스</th><td>마구 탭! 반짝이는 약점을 치면 3배</td></tr>
+        </table>
+        <p class="soon" style="margin:.6rem 0 0">PC: 마우스, 또는 스페이스로 누르기</p>
+      </div>
+      <div class="box panel">
+        <h3>게임 정보</h3>
+        <table>
+          <tr><th>장르</th><td>캐주얼 낚시 + 수집 · 강화</td></tr>
+          <tr><th>콘텐츠</th><td>구역 3곳, 물고기 24종 (보스 3종), 미끼 3종, 강화 4종, 하늘 별자리 3개, 손님 목표, 오늘의 예보</td></tr>
+          <tr><th>만든 도구</th><td>Godot 4 · 240x135 도트 화면</td></tr>
+          <tr><th>상태</th><td>1차 버전 웹 공개 · 다음 콘텐츠 기획 중</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <h2>기획 포인트</h2>
+    <p class="lead">"아주 간단하게 던지고 잡는 낚시"에 감성(은하수 호수)과 판단(언제 손을 뗄지, 어디에 던질지)을 얹었어요.</p>
+
+    <div class="box panel">
+      <h3>한 판 흐름</h3>
+      <div class="loop" aria-label="던지기, 기다리기, 입질 탭, 감기, 보스 기절, 낚아 올리기">
+        <span class="step">던지기</span><span class="arrow">→</span>
+        <span class="step">기다리기</span><span class="arrow">→</span>
+        <span class="step">입질 탭</span><span class="arrow">→</span>
+        <span class="step">감기</span><span class="arrow">→</span>
+        <span class="step">보스 기절</span><span class="arrow">→</span>
+        <span class="step">낚아 올리기</span>
+      </div>
+      <p style="margin-top:.8rem">한 번 던지는 데 10초 안팎. 단계마다 "누를까, 참을까"를 하나씩만 고르게 해서 조작은 단순해도 손에 긴장감이 남게 했어요.</p>
+    </div>
+
+    <div class="pillars" style="margin-top:1.25rem">
+      <div class="box pillar"><div class="n">참는 판단</div><p>톡톡 가짜 입질에 누르면 도망, 몸부림칠 때 계속 감으면 줄이 끊어짐</p></div>
+      <div class="box pillar"><div class="n">어디에 던질지</div><p>던지는 힘 = 구역. 가까운 물가는 쉽고, 먼 깊은 은하는 희귀 · 보스</p></div>
+      <div class="box pillar"><div class="n">오늘의 예보</div><p>날짜마다 바뀌는 별자리 · 혜성 예보를 보고 구역과 미끼를 고름</p></div>
+      <div class="box pillar"><div class="n">보스 기절</div><p>마구 치기 vs 약점 노려 치기. 보스마다 다른 방해 패턴 3가지</p></div>
+      <div class="box pillar"><div class="n">하늘이 채워짐</div><p>별자리 물고기 무리를 다 잡으면 하늘에 별자리가 선으로 이어져 빛남</p></div>
+    </div>
+
+    <div class="cols" style="margin-top:1.25rem">
+      <div class="box panel">
+        <h3>보스 3종, 다른 방해</h3>
+        <ul>
+          <li><b>블랙홀 아귀</b> — 기절 게이지가 조금씩 빨려 들어감</li>
+          <li><b>초신성 고래</b> — 하얗게 빛나는 동안은 쳐도 안 먹힘 (박자 보기)</li>
+          <li><b>달 삼키는 용</b> — 약점이 두 배 빨리 옮겨 다님</li>
+        </ul>
+      </div>
+      <div class="box panel">
+        <h3>성장 · 수집</h3>
+        <ul>
+          <li>별가루로 줄 · 릴 · 찌 · 망치 강화 (각 5단계)</li>
+          <li>혜성 미끼(희귀 ×3), 블랙홀 미끼(보스만 묾)</li>
+          <li>도감 24칸 + 물고기마다 최고 크기 기록</li>
+          <li>손님 목표가 차례로 나와 다음에 할 일을 알려 줌</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>만든 과정</h2>
+    <p class="lead">기획 원안 → 기획서 → 1차 제작 → 플레이 점검 순서로 만들었어요.</p>
+    <div class="box panel">
+      <ol class="timeline">
+        <li><span class="v">원안</span><span>아주 간단하게 던지고 잡는 낚시 · 감수성이 느껴지는 은하수 호수 · 다양한 물고기 · 낚싯대 강화 · 보스는 마구 타격해서 기절</span></li>
+        <li><span class="v">기획</span><span>한 판 흐름 5단계, 물고기 무리 6가지, 구역 · 미끼 · 예보로 전략을 더하고 1차 제작 범위를 정함</span></li>
+        <li><span class="v">1차</span><span>물고기 24종 · 미끼 3 · 강화 4 · 보스 패턴 3 · 하늘 별자리 · 손님 목표 · 도감, 한국어 · 영어</span></li>
+        <li><span class="v">손맛</span><span>플레이 점검 후 손맛 다듬기: 다가오는 물고기 그림자, 휘는 낚싯대, 장력에 따라 빨개지는 줄, 물방울 · 화면 흔들림, 물 밖으로 튀어 오르는 낚아 올리기</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="shots">
+    <h2>스크린샷</h2>
+    <div class="gallery">
+      <figure class="box"><img src="img/fish_wait.png" width="960" height="540" alt="물고기 그림자가 찌 쪽으로 다가오는 장면" loading="lazy"><figcaption>그림자가 찌 쪽으로 다가와요</figcaption></figure>
+      <figure class="box"><img src="img/fish_bite.png" width="960" height="540" alt="찌가 쏙 들어간 입질 순간" loading="lazy"><figcaption>입질! 지금 탭</figcaption></figure>
+      <figure class="box"><img src="img/fish_reel.png" width="960" height="540" alt="낚싯대가 휘며 물고기를 감는 장면" loading="lazy"><figcaption>장력을 보며 감기</figcaption></figure>
+      <figure class="box"><img src="img/fish_boss.png" width="960" height="540" alt="물 위로 뛰어오른 블랙홀 아귀" loading="lazy"><figcaption>보스: 마구 탭해서 기절</figcaption></figure>
+      <figure class="box"><img src="img/fish_result.png" width="960" height="540" alt="잡은 물고기 카드" loading="lazy"><figcaption>크기는 매번 달라요</figcaption></figure>
+      <figure class="box"><img src="img/fish_dex.png" width="960" height="540" alt="물고기 도감" loading="lazy"><figcaption>물고기 도감 24칸</figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Habong · 은하수 낚시</span>
+    <span><a href="../../">← 다른 게임 보기</a></span>
+  </div>
+</footer>
+
+<script>
+  // 게임(약 45MB)은 버튼을 눌렀을 때만 불러온다
+  document.getElementById("start").addEventListener("click", function () {
+    var screen = document.getElementById("screen");
+    var frame = document.createElement("iframe");
+    frame.src = "play/";
+    frame.title = "은하수 낚시 게임";
+    frame.allow = "autoplay; fullscreen; gamepad";
+    screen.replaceChildren(frame);
+    frame.focus();
+  });
+</script>
+</body>
+</html>
