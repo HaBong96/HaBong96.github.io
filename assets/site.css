@@ -179,3 +179,12 @@ th { color: var(--ink-soft); font-weight: 600; white-space: nowrap; width: 7.5re
 .foot .wrap { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
 
 @media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
+
+/* 세로 화면 게임 (운빨블러드): 휴대폰 모양 틀 — 270x480 도트의 2배 */
+/* 게임 화면은 최소 270x480 (1배), 화면 높이가 되면 540x960 (2배)까지 */
+.split { display: grid; gap: 1.5rem; grid-template-columns: max-content 1fr; align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.player.portrait { width: clamp(286px, calc((100vh - 120px) * 0.5625 + 16px), 556px); max-width: 100%; margin: 0 auto; border-radius: 18px; padding: 8px; }
+.player.portrait .screen { aspect-ratio: 9 / 16; border-radius: 10px; }
+.player.portrait .screen img { object-fit: cover; }
+.gallery.tall { grid-template-columns: repeat(auto-fill, minmax(min(9rem, 100%), 1fr)); }
