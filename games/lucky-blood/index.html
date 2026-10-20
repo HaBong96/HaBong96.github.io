@@ -61,9 +61,9 @@
           <h3>게임 정보</h3>
           <table>
             <tr><th>규칙</th><td>6개 왕국 (나 + AI 왕 5명), 캐슬이 무너지면 탈락, 마지막 1명이 승리. 1 · 2 · 3등만 랭크 점수</td></tr>
-            <tr><th>콘텐츠</th><td>병종 5갈래 · 전문화 15종, 공성 병기 2종, 이름 있는 영웅 9명 (보석 1 ~ 4), 공통 미션 4종, 스킬 9종 (마법 4 · 방책 5), 신화 괴수 3종, 캐슬 3단계, 병종 56종 (정예 30 · 전설 5)</td></tr>
+            <tr><th>콘텐츠</th><td>병종 5갈래 · 전문화 15종, 공성 병기 2종, 이름 있는 영웅 21명 (보석 1 ~ 6), 공통 미션 4종, 스킬 9종 (마법 4 · 방책 5), 신화 괴수 3종, 캐슬 3단계, 병종 56종 (정예 30 · 전설 5)</td></tr>
             <tr><th>후반</th><td>10분 버닝 (생산 · 돈 ×2, 캐슬 피해 ×3), 침략 괴수, 무너진 왕국의 언데드 제단, 1등 현상금</td></tr>
-            <tr><th>판 밖</th><td>뽑기 (천장 · 10번 보장 · 확률 공개) · 카드 수집 · 업그레이드 Lv10 · 덱 편성 · 일일 미션 · 출석 · 상점 · 14일 시즌 랭킹 (실제 결제 없음)</td></tr>
+            <tr><th>판 밖</th><td>뽑기 (안 가진 카드 먼저 · 천장 · 확률 공개) · 강화 미리 보기 · 영웅 전용 보물 21종 · 시즌 패스 · 퀘스트 (일일 · 주간 · 업적) · 레벨 길 · 출석 · 상점 · 14일 시즌 랭킹 (실제 결제 없음)</td></tr>
             <tr><th>만든 도구</th><td>Godot 4 · 270x480 세로 도트 화면, 그림 · 소리 · 전장은 모두 스크립트로 생성</td></tr>
             <tr><th>상태</th><td>1차 틀 · 개발 중 (온라인 6인 대전은 나중에)</td></tr>
           </table>
@@ -85,6 +85,8 @@
       <div class="box pillar"><div class="n">끝없는 빌드</div><p>진화 · 전직 카드가 끝없이 — 남의 루트를 보고 상대를 이기는 병종으로 갈아탐. 업그레이드는 새 병사부터라 군대가 섞임</p></div>
       <div class="box pillar"><div class="n">동맹과 배신</div><p>1등을 막으려 손잡고, 약해지면 배신. 배신자는 2분 동안 외톨이, 남은 왕국이 둘이면 동맹은 끝</p></div>
       <div class="box pillar"><div class="n">후반은 급하게</div><p>10분 버닝 · 숨어 있는 왕국을 노리는 침략 괴수 · 무너진 자리의 언데드 군단 — 버티기보다 과감하게</p></div>
+      <div class="box pillar"><div class="n">영웅 21명</div><p>사기적일수록 보석이 비쌈 — 감염시키는 좀비 · 해골을 일으키는 강령술사 · 죽어도 부활하는 불사조 · 공포를 거는 마왕 · 화룡</p></div>
+      <div class="box pillar"><div class="n">처음엔 빠르게</div><p>판마다 10번 뽑기, 안 가진 카드가 먼저 나와 오픈은 빠르게 · 그 뒤는 중복으로 강화. AI도 내가 가진 카드 수준으로</p></div>
       <div class="box pillar"><div class="n">성은 단단하게</div><p>캐슬은 사거리가 길고 여러 발 — 초반에 쳐들어가면 점수를 퍼 줌. 5분 뒤엔 결전 (캐슬 피해 2배)</p></div>
     </div>
     <div class="cols" style="margin-top:1.25rem">
@@ -124,6 +126,8 @@
         <li><span class="v">플레이 테스트 2</span><span>"마법 한 방에 다 죽어 불쾌" · "방책이 낫겠다" 원안 → 마법은 영지 안 수비용으로 약하게, 방책 5종, 업그레이드는 새 병사부터, 실시간 전력 순위 · 검은 미니맵 · 입체 캐슬 3단계 · 신화 괴수와 불쾌함 방지 4가지</span></li>
         <li><span class="v">진화 · 동맹</span><span>"10단계 진화" 원안 → 정예 30 · 전설 5, "동맹 · 배신" 원안 → 왕국 줄에서 신청, AI가 1등은 경계 · 약해진 동맹은 배신</span></li>
         <li><span class="v">플레이 테스트 4</span><span>"진화가 멈추면 재미없다 · 후반엔 서로 안 싸운다" 원안 → 끝없는 진화 · 전직 카드, 10분 버닝 · 침략 괴수 · 언데드 제단 · 현상금, 판마다 소환권</span></li>
+        <li><span class="v">영웅 · 메타 2</span><span>레퍼런스 화면 13장 역기획 → 영웅 21명 · 강화 미리 보기 · 잠긴 카드 · 전용 보물 · 시즌 패스 · 퀘스트 · 레벨 길</span></li>
+        <li><span class="v">진입 장벽</span><span>"오픈부터 너무 어렵다 · 기본 캐릭터로 밀린다" 원안 → 판마다 소환권 10장 이상, 안 가진 카드 먼저, AI도 내 카드 기준, 화면 전부 찍어 UI 겹침 정리</span></li>
         <li><span class="v">최적화</span><span>휴대폰 수준(CPU 4배 느리게)으로 측정 → 웹의 파일 찾기가 CPU 20% → 그림을 기억해 느린 프레임 18ms → 6ms</span></li>
       </ol>
     </div>
@@ -142,6 +146,10 @@
       <figure class="box"><img src="img/11d_hero_info.png" width="540" height="960" alt="영웅 정보" loading="lazy"><figcaption>영웅 정보</figcaption></figure>
       <figure class="box"><img src="img/11g_burning_undead.png" width="540" height="960" alt="버닝 모드와 언데드 제단" loading="lazy"><figcaption>버닝 · 언데드 제단 · 침략</figcaption></figure>
       <figure class="box"><img src="img/11i_kingdom.png" width="540" height="960" alt="왕국 창 (동맹 신청 · 루트)" loading="lazy"><figcaption>동맹 신청 · 남의 루트</figcaption></figure>
+      <figure class="box"><img src="img/21_pass.png" width="540" height="960" alt="시즌 패스" loading="lazy"><figcaption>시즌 패스</figcaption></figure>
+      <figure class="box"><img src="img/22_treasures.png" width="540" height="960" alt="영웅 전용 보물" loading="lazy"><figcaption>전용 보물 21종</figcaption></figure>
+      <figure class="box"><img src="img/20_quests.png" width="540" height="960" alt="퀘스트" loading="lazy"><figcaption>퀘스트</figcaption></figure>
+      <figure class="box"><img src="img/23_evo_tree.png" width="540" height="960" alt="진화 나무" loading="lazy"><figcaption>진화 나무</figcaption></figure>
       <figure class="box"><img src="img/12_result.png" width="540" height="960" alt="승리 화면" loading="lazy"><figcaption>승리</figcaption></figure>
       <figure class="box"><img src="img/13_lobby.png" width="540" height="960" alt="로비" loading="lazy"><figcaption>로비</figcaption></figure>
       <figure class="box"><img src="img/14_shop.png" width="540" height="960" alt="상점과 왕국 소환" loading="lazy"><figcaption>상점 · 왕국 소환</figcaption></figure>
