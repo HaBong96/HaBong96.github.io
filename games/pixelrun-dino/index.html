@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>픽셀런 다이노 · HaBong</title>
+<meta name="description" content="점프만 하면 공룡이 알아서 싸우는 16x16 도트 러너. 브라우저에서 바로 플레이.">
+<meta property="og:title" content="픽셀런 다이노 · PixelRun Dino">
+<meta property="og:description" content="점프만 하면 공룡이 알아서 싸우는 16x16 도트 러너">
+<meta property="og:image" content="https://habong96.github.io/games/pixelrun-dino/img/combat_boss.png">
+<link rel="icon" href="play/index.icon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../../">Ha<span>Bong</span></a>
+    <nav class="nav" aria-label="메뉴">
+      <a href="#play">플레이</a>
+      <a href="#design">기획 포인트</a>
+      <a href="#history">만든 과정</a>
+      <a href="#shots">스크린샷</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="play" style="padding-top:2rem">
+    <h1>픽셀런 다이노</h1>
+    <div class="tags"><span class="tag">엔드리스 러너</span><span class="tag">자동 전투</span><span class="tag">수집 · 성장</span><span class="tag">모험 모드 20스테이지</span><span class="tag">한국어 · English</span></div>
+    <p class="lead">인터넷이 끊기면 나오는 그 공룡 게임을 16x16 도트로 다시 만들었어요. 조작은 점프 · 숙이기 두 가지뿐이고, 공격은 공룡이 알아서 해요.</p>
+
+    <div class="box player">
+      <div class="screen" id="screen">
+        <img src="img/combat_boss.png" width="960" height="540" alt="픽셀런 다이노: 공룡이 보스 새와 싸우는 장면">
+        <div class="start"><button class="btn" id="start" type="button">▶ 여기서 플레이</button></div>
+      </div>
+      <div class="player-bar">
+        <span>처음 받을 때 약 45MB · 기록은 이 브라우저에 저장돼요</span>
+        <a href="play/" target="_blank" rel="noopener">전체 화면으로 열기 ↗</a>
+      </div>
+    </div>
+    <p class="soon" style="margin-top:.8rem">휴대폰에서는 가로로 돌리고 <a href="play/" target="_blank" rel="noopener">전체 화면</a>으로 하는 게 가장 편해요.</p>
+
+    <div class="cols" style="margin-top:1rem">
+      <div class="box panel">
+        <h3>조작</h3>
+        <table>
+          <tr><th>점프</th><td>화면 오른쪽 탭 · 스페이스 · ↑<br>길게 누르면 높이 뛰어요</td></tr>
+          <tr><th>숙이기</th><td>화면 왼쪽 누르고 있기 · ↓<br>공중에서 누르면 빨리 내려와요</td></tr>
+          <tr><th>일시정지</th><td>오른쪽 위 버튼 · Esc</td></tr>
+        </table>
+      </div>
+      <div class="box panel">
+        <h3>게임 정보</h3>
+        <table>
+          <tr><th>장르</th><td>엔드리스 러너 + 자동 전투 · 수집 · 성장</td></tr>
+          <tr><th>콘텐츠</th><td>공룡 8종 (색깔 · 진화까지 32가지), 적 20종, 무기 · 장비, 모험 모드 4월드 20스테이지</td></tr>
+          <tr><th>만든 도구</th><td>Godot 4 · 240x135 도트 화면</td></tr>
+          <tr><th>상태</th><td>웹 공개 · 안드로이드 출시 준비 중</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <h2>기획 포인트</h2>
+    <p class="lead">모든 기능은 아래 다섯 가지 재미 중 하나 이상을 강하게 만들어야 한다는 기준으로 넣고 뺐어요.</p>
+    <div class="pillars">
+      <div class="box pillar"><div class="n">1 · 익숙한 재미</div><p>누구나 바로 아는 점프 · 숙이기 두 동작</p></div>
+      <div class="box pillar"><div class="n">2 · 모으는 재미</div><p>생김새와 능력이 다른 공룡을 하나씩 모으기</p></div>
+      <div class="box pillar"><div class="n">3 · 성장하는 재미</div><p>모은 뼈로 강해져서 더 멀리 가기</p></div>
+      <div class="box pillar"><div class="n">4 · 새로운 재미</div><p>지역마다 새 장애물 · 적 · 돌발 이벤트</p></div>
+      <div class="box pillar"><div class="n">5 · 도트의 매력</div><p>16x16 안에 담은 표정과 움직임</p></div>
+    </div>
+
+    <div class="cols" style="margin-top:1.25rem">
+      <div class="box panel">
+        <h3>핵심 루프</h3>
+        <div class="loop" aria-label="공룡 고르기, 달리기, 꽈당, 보상, 강화 · 해금, 다시 공룡 고르기">
+          <span class="step">공룡 고르기</span><span class="arrow">→</span>
+          <span class="step">달리기</span><span class="arrow">→</span>
+          <span class="step">꽈당</span><span class="arrow">→</span>
+          <span class="step">보상</span><span class="arrow">→</span>
+          <span class="step">강화 · 해금</span><span class="arrow">↺</span>
+        </div>
+        <p style="margin-top:.8rem">한 판은 1~3분. 꽈당하면 바로 다시 달릴 수 있게 하고, 긴 루프(뼈 → 강화 · 새 공룡 → 더 멀리)로 다음 판을 하고 싶게 만들었어요.</p>
+      </div>
+      <div class="box panel">
+        <h3>"점프만 하면 공룡이 알아서 싸운다"</h3>
+        <p>조작은 늘리지 않고, 공격은 자동으로. 앞에 나온 적을 공룡이 알아서 쏘고, 판 안에서 레벨이 올라 무기가 점점 화려해져요. 멀리 갈수록 적이 단단해지고 1000m마다 보스가 나와서, 판 안 성장과 판 밖 강화가 곧 기록이 돼요.</p>
+      </div>
+    </div>
+
+    <div class="box panel" style="margin-top:1.25rem">
+      <h3>조작을 단순하게 지키는 원칙</h3>
+      <ul>
+        <li>화면에 따로 버튼을 두지 않고, 손가락이 닿는 곳은 왼쪽 · 오른쪽 두 곳뿐</li>
+        <li>스와이프는 쓰지 않음 — 빠른 속도에서 인식이 늦어 억울한 꽈당이 생기기 쉬워서</li>
+        <li>착지 직전에 누른 점프도 0.12초 기억했다가 착지하자마자 뛰게 해서, 터치가 늦게 느껴지지 않게</li>
+        <li>조작 안내는 엄지가 실제로 닿는 화면 아래 모래 자리에</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>만든 과정</h2>
+    <p class="lead">기획서를 먼저 쓰고, 해 보고, 고치는 것을 반복했어요. 기획서 버전마다 무엇을 바꿨는지 남겨 두었어요.</p>
+    <div class="box panel">
+      <ol class="timeline">
+        <li><span class="v">v0.1–0.6</span><span>원작 공룡 게임을 모티브로 초안 · 이름 · 가로 화면 · 화면 나누기 조작 확정, 첫 프로토타입. 캐릭터가 더 가깝게 보이도록 화면을 320x180 → 240x135로</span></li>
+        <li><span class="v">v0.7–0.8</span><span>재미 다듬기: 아슬아슬하게 피했을 때의 손맛, 판정 기준 조정</span></li>
+        <li><span class="v">v0.9–0.11</span><span>성장 · 보상: 뼈 · 알 부화 · 공룡 수집 · 강화 · 무료 선물 · 일일 미션, 공룡에 다는 장비</span></li>
+        <li><span class="v">v0.12–0.13</span><span>자동 전투 · 판 안 레벨업, 퀘스트 · 도감, 속도감 · 타격감</span></li>
+        <li><span class="v">v0.14–0.15</span><span>반복이 지루해지지 않게: 지역 · 돌발 이벤트 · 공룡 진화, 모험 모드 20스테이지로 볼륨 확장</span></li>
+        <li><span class="v">v1.0–1.2</span><span>출시 준비: 설정 · 일시정지 · 뒤로 가기, 영어판(번역 432개), 무료 출시로 결정</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="shots">
+    <h2>스크린샷</h2>
+    <div class="gallery">
+      <figure class="box"><img src="img/combat_boss.png" width="960" height="540" alt="1000m마다 나오는 보스와의 전투" loading="lazy"><figcaption>1000m마다 보스가 나와요</figcaption></figure>
+      <figure class="box"><img src="img/dinos.png" width="960" height="540" alt="공룡 고르기 화면" loading="lazy"><figcaption>알에서 공룡을 모으고 골라요</figcaption></figure>
+      <figure class="box"><img src="img/region_volcano.png" width="960" height="540" alt="화산 지대를 달리는 장면" loading="lazy"><figcaption>지역마다 새 장애물과 적</figcaption></figure>
+      <figure class="box"><img src="img/gear_rocket.png" width="960" height="540" alt="로켓 장비를 단 공룡" loading="lazy"><figcaption>장비: 자동 로켓</figcaption></figure>
+      <figure class="box"><img src="img/evolve.gif" width="720" height="405" alt="공룡이 진화하는 장면" loading="lazy"><figcaption>공룡 진화</figcaption></figure>
+      <figure class="box"><img src="img/adventure.gif" width="480" height="270" alt="모험 모드 지도" loading="lazy"><figcaption>모험 모드</figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 HaBong · 픽셀런 다이노</span>
+    <span><a href="../../">← 다른 게임 보기</a></span>
+  </div>
+</footer>
+
+<script>
+  // 게임(약 45MB)은 버튼을 눌렀을 때만 불러온다
+  document.getElementById("start").addEventListener("click", function () {
+    var screen = document.getElementById("screen");
+    var frame = document.createElement("iframe");
+    frame.src = "play/";
+    frame.title = "픽셀런 다이노 게임";
+    frame.allow = "autoplay; fullscreen; gamepad";
+    screen.replaceChildren(frame);
+    frame.focus();
+  });
+</script>
+</body>
+</html>
