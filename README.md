@@ -1,4 +1,4 @@
-# HaBong 포트폴리오
+# Habong 포트폴리오
 
 https://habong96.github.io — 직접 기획하고 만든 도트 게임을 브라우저에서 바로 플레이할 수 있는 사이트.
 
