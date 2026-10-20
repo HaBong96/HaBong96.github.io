@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>운빨블러드 · Habong</title>
-<meta name="description" content="한 손으로 6명이 눈치 보며 싸우는 도트 왕국 전쟁. 빌드를 골라 상성으로 대응하고, 운에 맡겨 영웅을 뽑아요. 브라우저에서 바로 플레이.">
+<meta name="description" content="한 손으로 6명이 눈치 보며 싸우는 도트 왕국 전쟁. 빌드를 골라 상성으로 대응하고, 공통 미션으로 보석을 모아 덱의 영웅을 불러요. 브라우저에서 바로 플레이.">
 <meta property="og:title" content="운빨블러드">
 <meta property="og:description" content="한 손으로 6명이 눈치 보며 싸우는 도트 왕국 전쟁">
 <meta property="og:image" content="https://habong96.github.io/games/lucky-blood/img/cover.png">
@@ -29,8 +29,8 @@
 <main class="wrap">
   <section id="play" style="padding-top:2rem">
     <h1>운빨블러드</h1>
-    <div class="tags"><span class="tag">6인 실시간 전략</span><span class="tag">빌드 · 상성</span><span class="tag">영웅 뽑기</span><span class="tag">세로 한 손</span><span class="tag">개발 중</span></div>
-    <p class="lead">스타크래프트 유즈맵 "랜덤블러드"를 모바일 세로 화면으로. 왕은 무적이지만 캐슬은 하나뿐 — 6개 왕국이 눈치를 보며 병력을 모으고, 빌드를 고르고, 운에 맡겨 영웅을 뽑아 마지막 1명이 될 때까지 싸워요.</p>
+    <div class="tags"><span class="tag">6인 실시간 전략</span><span class="tag">빌드 · 상성</span><span class="tag">영웅 덱 · 미션</span><span class="tag">세로 한 손</span><span class="tag">개발 중</span></div>
+    <p class="lead">스타크래프트 유즈맵 "랜덤블러드"를 모바일 세로 화면으로. 왕은 무적이지만 캐슬은 하나뿐 — 6개 왕국이 눈치를 보며 병력을 모으고, 빌드를 고르고, 공통 미션을 다퉈 얻은 보석으로 영웅을 불러 마지막 1명이 될 때까지 싸워요.</p>
 
     <div class="split" style="margin-top:1rem">
       <div class="box player portrait">
@@ -48,8 +48,9 @@
           <h3>조작 (한 손)</h3>
           <table>
             <tr><th>왕 이동</th><td>화면을 터치한 곳으로 왕이 달려가고, 병사 · 영웅이 따라가며 알아서 싸워요</td></tr>
-            <tr><th>강화 · 소환</th><td>내 캐슬을 눌러 돈으로 강화하거나 영웅을 뽑아요</td></tr>
-            <tr><th>마법</th><td>번개 · 얼음 버튼을 누르고 쓸 곳을 터치</td></tr>
+            <tr><th>강화</th><td>내 캐슬을 눌러 돈으로 병사 · 캐슬 · 마법 강화</td></tr>
+            <tr><th>영웅</th><td>왼쪽 아래 영웅 칸을 눌러 보석으로 소환 (보석은 공통 미션으로)</td></tr>
+            <tr><th>마법</th><td>번개 · 얼음 버튼을 누르고 쓸 곳을 터치 (돈을 내고 써요)</td></tr>
             <tr><th>집결</th><td>깃발 버튼: 싸움을 멈추고 모두 왕에게 달려와요</td></tr>
             <tr><th>업그레이드</th><td>포인트가 모이면 카드 3장 중 하나 (접어 둘 수 있어요)</td></tr>
           </table>
@@ -58,8 +59,8 @@
         <div class="box panel">
           <h3>게임 정보</h3>
           <table>
-            <tr><th>규칙</th><td>6개 왕국 (나 + AI 왕 5명), 캐슬이 무너지면 탈락, 마지막 1명이 승리. 한 판 3 ~ 8분</td></tr>
-            <tr><th>콘텐츠</th><td>병종 13종 (상성 3갈래), 군대 특성 6종, 영웅 9명 (일반 · 희귀 · 전설), 마법 2종, 캐슬 강화 6종</td></tr>
+            <tr><th>규칙</th><td>6개 왕국 (나 + AI 왕 5명), 캐슬이 무너지면 탈락, 마지막 1명이 승리. 1 · 2 · 3등만 랭크 점수</td></tr>
+            <tr><th>콘텐츠</th><td>병종 13종 (상성 3갈래), 군대 특성 6종, 이름 있는 영웅 9명 (보석 1 ~ 4), 공통 미션 4종, 마법 2종, 캐슬 강화 6종</td></tr>
             <tr><th>만든 도구</th><td>Godot 4 · 270x480 세로 도트 화면, 그림 · 소리 · 전장은 모두 스크립트로 생성</td></tr>
             <tr><th>상태</th><td>1차 틀 · 개발 중 (온라인 6인 대전은 나중에)</td></tr>
           </table>
@@ -75,8 +76,8 @@
       <div class="box pillar"><div class="n">공평한 6각형</div><p>6개 왕국이 정6각형으로 광장을 둘러싸 모두 같은 거리. 영지는 해자로 막혀 다리로만 나감</p></div>
       <div class="box pillar"><div class="n">빌드 = 카드 3장</div><p>창병 · 궁수 · 기병 → 전문화 9종 → 군대 특성. 고를 때마다 선택지 3개</p></div>
       <div class="box pillar"><div class="n">상성으로 대응</div><p>보병 → 기병 → 원거리 → 보병 (1.6배). 화면 위에 다른 왕국의 병종이 보여 보고 대응</p></div>
-      <div class="box pillar"><div class="n">운빨 영웅</div><p>돈으로 뽑으면 등급이 운으로 (일반 60 · 희귀 30 · 전설 10%). 같은 영웅은 별 성장</p></div>
-      <div class="box pillar"><div class="n">늘어지지 않게</div><p>5분이 지나면 결전 — 캐슬 피해 2배. 모바일 한 판 3 ~ 8분</p></div>
+      <div class="box pillar"><div class="n">판 안엔 운 없음</div><p>영웅은 덱에서 골라 보석으로. 보석은 1분마다 떨어지는 공통 미션을 먼저 해낸 왕국이 가짐</p></div>
+      <div class="box pillar"><div class="n">성은 단단하게</div><p>캐슬은 사거리가 길고 여러 발 — 초반에 쳐들어가면 점수를 퍼 줌. 5분 뒤엔 결전 (캐슬 피해 2배)</p></div>
     </div>
     <div class="cols" style="margin-top:1.25rem">
       <div class="box panel">
@@ -94,7 +95,7 @@
           <li>병력을 모았다가 가깝고 약한 왕국을 노림 (나만 노리지 않음)</li>
           <li>많이 잃으면 물러나 다시 모으고, 집이 공격받으면 돌아가 지킴</li>
           <li>주변 왕국 빌드를 보고 상성으로 병종을 고름</li>
-          <li>적이 모인 곳에 마법, 영웅부터 모으고 남은 돈으로 강화</li>
+          <li>적이 모인 곳에 돈을 내고 마법, 보석이 되면 덱의 비싼 영웅부터, 분수 미션엔 병력을 데리고 나섬</li>
         </ul>
       </div>
     </div>
@@ -108,6 +109,8 @@
         <li><span class="v">1차 틀</span><span>Habong 로고 → 로딩 → 튜토리얼 → 전투 → 결과 → 로비, 6각형 전장 · AI 5명 · 자동 대전 시험으로 판 길이 · 처리 시간 확인</span></li>
         <li><span class="v">빌드</span><span>"업그레이드 때 선택지 3개" 원안 → 병종 13종 · 상성 · 군대 특성, 판이 늘어져서 결전 규칙 추가</span></li>
         <li><span class="v">운빨</span><span>"영웅 병사 뽑기" 원안 → 등급 확률 · 영웅 9명 · 별 성장 · 꽉 찼을 때 더 높은 등급이면 교체</span></li>
+        <li><span class="v">플레이 테스트</span><span>따라올 때 버벅임 · 나무 · 물 위 걷기 → 대열 간격 · 몸 폭 확인, 싸움 중 안 따라옴 → 목줄 · [집결] 버튼</span></li>
+        <li><span class="v">운 빼기</span><span>"판 안 운빨은 빼고 판 밖 뽑기로" 원안 → 이름 있는 영웅 · 덱 · 보석 · 공통 미션 · 돈으로 마법 · 1 ~ 3등 랭크 점수 (다음: 신화 괴수 · 공성 · 뽑기와 덱 강화)</span></li>
         <li><span class="v">최적화</span><span>휴대폰 수준(CPU 4배 느리게)으로 측정 → 웹의 파일 찾기가 CPU 20% → 그림을 기억해 느린 프레임 18ms → 6ms</span></li>
       </ol>
     </div>
@@ -120,8 +123,7 @@
       <figure class="box"><img src="img/02_loading.png" width="540" height="960" alt="로딩 화면" loading="lazy"><figcaption>로딩</figcaption></figure>
       <figure class="box"><img src="img/03_tutorial_welcome.png" width="540" height="960" alt="튜토리얼" loading="lazy"><figcaption>튜토리얼</figcaption></figure>
       <figure class="box"><img src="img/06b_upgrade_cards.png" width="540" height="960" alt="업그레이드 카드 3장" loading="lazy"><figcaption>빌드 고르기</figcaption></figure>
-      <figure class="box"><img src="img/07b_summon_legend.png" width="540" height="960" alt="전설 영웅 소환" loading="lazy"><figcaption>전설 영웅 소환</figcaption></figure>
-      <figure class="box"><img src="img/10_battle.png" width="540" height="960" alt="적 캐슬 공격" loading="lazy"><figcaption>적 캐슬 공격</figcaption></figure>
+      <figure class="box"><img src="img/10_battle.png" width="540" height="960" alt="적 캐슬 공격" loading="lazy"><figcaption>영웅 칸 · 공통 미션</figcaption></figure>
       <figure class="box"><img src="img/12_result.png" width="540" height="960" alt="승리 화면" loading="lazy"><figcaption>승리</figcaption></figure>
       <figure class="box"><img src="img/13_lobby.png" width="540" height="960" alt="로비" loading="lazy"><figcaption>로비</figcaption></figure>
     </div>
