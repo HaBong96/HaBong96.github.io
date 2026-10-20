@@ -49,8 +49,9 @@
           <table>
             <tr><th>왕 이동</th><td>화면을 터치한 곳으로 왕이 달려가고, 병사 · 영웅이 따라가며 알아서 싸워요</td></tr>
             <tr><th>강화</th><td>내 캐슬을 눌러 돈으로 병사 · 캐슬 · 마법 강화</td></tr>
-            <tr><th>영웅</th><td>왼쪽 아래 영웅 칸을 눌러 보석으로 소환 (보석은 공통 미션으로)</td></tr>
-            <tr><th>마법</th><td>덱의 마법 버튼을 누르고 쓸 곳을 터치 (돈을 내고 써요)</td></tr>
+            <tr><th>영웅</th><td>왼쪽 아래 영웅 칸을 누르면 정보 → [소환] (보석은 공통 미션으로)</td></tr>
+            <tr><th>스킬</th><td>덱의 스킬 2개: 마법은 내 영지 안에서만 (수비), 방책은 광장 · 길에도 세움 (돈을 내고 써요)</td></tr>
+            <tr><th>순위</th><td>위쪽 왕국 줄 = 실시간 전력 순위, 누르면 순위 창</td></tr>
             <tr><th>집결</th><td>깃발 버튼: 싸움을 멈추고 모두 왕에게 달려와요</td></tr>
             <tr><th>업그레이드</th><td>포인트가 모이면 카드 3장 중 하나 (접어 둘 수 있어요)</td></tr>
           </table>
@@ -60,7 +61,7 @@
           <h3>게임 정보</h3>
           <table>
             <tr><th>규칙</th><td>6개 왕국 (나 + AI 왕 5명), 캐슬이 무너지면 탈락, 마지막 1명이 승리. 1 · 2 · 3등만 랭크 점수</td></tr>
-            <tr><th>콘텐츠</th><td>병종 5갈래 · 전문화 15종, 공성 병기 2종, 이름 있는 영웅 9명 (보석 1 ~ 4), 공통 미션 4종, 마법 4종 (덱에 2개), 캐슬 강화</td></tr>
+            <tr><th>콘텐츠</th><td>병종 5갈래 · 전문화 15종, 공성 병기 2종, 이름 있는 영웅 9명 (보석 1 ~ 4), 공통 미션 4종, 스킬 9종 (마법 4 · 방책 5), 신화 괴수 3종, 캐슬 3단계</td></tr>
             <tr><th>판 밖</th><td>뽑기 (천장 · 10번 보장 · 확률 공개) · 카드 수집 · 업그레이드 Lv10 · 덱 편성 · 일일 미션 · 출석 · 상점 · 14일 시즌 랭킹 (실제 결제 없음)</td></tr>
             <tr><th>만든 도구</th><td>Godot 4 · 270x480 세로 도트 화면, 그림 · 소리 · 전장은 모두 스크립트로 생성</td></tr>
             <tr><th>상태</th><td>1차 틀 · 개발 중 (온라인 6인 대전은 나중에)</td></tr>
@@ -79,6 +80,7 @@
       <div class="box pillar"><div class="n">상성으로 대응</div><p>보병 → 기병 → 원거리 → 보병 (1.6배). 화면 위에 다른 왕국의 병종이 보여 보고 대응</p></div>
       <div class="box pillar"><div class="n">판 안엔 운 없음</div><p>영웅은 덱에서 골라 보석으로. 보석은 1분마다 떨어지는 공통 미션을 먼저 해낸 왕국이 가짐</p></div>
       <div class="box pillar"><div class="n">운은 판 밖에서</div><p>뽑기 · 업그레이드는 로비에서. 판 안 AI 왕국은 내 평균 카드 레벨 ±1로 맞춰 공정하게</p></div>
+      <div class="box pillar"><div class="n">신화 괴수</div><p>2분마다 광장에 미노타우로스 · 키클롭스 · 펜리르. 막타는 보석 · 일시 축복, 괴수는 전력 1등을 노리고, 1등이 잡으면 축복이 짧음</p></div>
       <div class="box pillar"><div class="n">성은 단단하게</div><p>캐슬은 사거리가 길고 여러 발 — 초반에 쳐들어가면 점수를 퍼 줌. 5분 뒤엔 결전 (캐슬 피해 2배)</p></div>
     </div>
     <div class="cols" style="margin-top:1.25rem">
@@ -115,6 +117,7 @@
         <li><span class="v">운 빼기</span><span>"판 안 운빨은 빼고 판 밖 뽑기로" 원안 → 이름 있는 영웅 · 덱 · 보석 · 공통 미션 · 돈으로 마법 · 1 ~ 3등 랭크 점수 (다음: 신화 괴수 · 공성 · 뽑기와 덱 강화)</span></li>
         <li><span class="v">공성 · 갈래</span><span>"마법사 · 도끼병 · 공성 병기" 원안 → 캐슬만 치는 투석기 · 충차, 도끼 · 마법 갈래, 덱의 3갈래만 판 안 카드에</span></li>
         <li><span class="v">판 밖</span><span>운빨존많겜 화면 55장을 역기획 → 로비 탭 5개 · 왕국 소환 (천장 50 · 10번 희귀 보장) · 수집 · 덱 · 시즌 랭킹 · 일일 미션 · 출석 · 상점, 뽑기 2만 번 시험으로 확률 확인</span></li>
+        <li><span class="v">플레이 테스트 2</span><span>"마법 한 방에 다 죽어 불쾌" · "방책이 낫겠다" 원안 → 마법은 영지 안 수비용으로 약하게, 방책 5종, 업그레이드는 새 병사부터, 실시간 전력 순위 · 검은 미니맵 · 입체 캐슬 3단계 · 신화 괴수와 불쾌함 방지 4가지</span></li>
         <li><span class="v">최적화</span><span>휴대폰 수준(CPU 4배 느리게)으로 측정 → 웹의 파일 찾기가 CPU 20% → 그림을 기억해 느린 프레임 18ms → 6ms</span></li>
       </ol>
     </div>
@@ -128,6 +131,9 @@
       <figure class="box"><img src="img/03_tutorial_welcome.png" width="540" height="960" alt="튜토리얼" loading="lazy"><figcaption>튜토리얼</figcaption></figure>
       <figure class="box"><img src="img/06b_upgrade_cards.png" width="540" height="960" alt="업그레이드 카드 3장" loading="lazy"><figcaption>빌드 고르기</figcaption></figure>
       <figure class="box"><img src="img/10_battle.png" width="540" height="960" alt="적 캐슬 공격" loading="lazy"><figcaption>영웅 칸 · 공통 미션</figcaption></figure>
+      <figure class="box"><img src="img/11b_skills_monster.png" width="540" height="960" alt="방책과 신화 괴수" loading="lazy"><figcaption>방책 · 신화 괴수 · 입체 캐슬</figcaption></figure>
+      <figure class="box"><img src="img/11c_ranking.png" width="540" height="960" alt="실시간 왕국 순위" loading="lazy"><figcaption>실시간 순위</figcaption></figure>
+      <figure class="box"><img src="img/11d_hero_info.png" width="540" height="960" alt="영웅 정보" loading="lazy"><figcaption>영웅 정보</figcaption></figure>
       <figure class="box"><img src="img/12_result.png" width="540" height="960" alt="승리 화면" loading="lazy"><figcaption>승리</figcaption></figure>
       <figure class="box"><img src="img/13_lobby.png" width="540" height="960" alt="로비" loading="lazy"><figcaption>로비</figcaption></figure>
       <figure class="box"><img src="img/14_shop.png" width="540" height="960" alt="상점과 왕국 소환" loading="lazy"><figcaption>상점 · 왕국 소환</figcaption></figure>
