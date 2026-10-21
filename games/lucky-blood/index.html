@@ -30,7 +30,7 @@
 <main class="wrap">
   <section id="play" style="padding-top:2rem">
     <h1>운빨블러드</h1>
-    <div class="tags"><span class="tag">6인 실시간 대전</span><span class="tag">확률 소환 · 합성</span><span class="tag">영웅 조합</span><span class="tag">세로 한 손</span><span class="tag">개발 중 · v1.3</span></div>
+    <div class="tags"><span class="tag">6인 실시간 대전</span><span class="tag">확률 소환 · 합성</span><span class="tag">영웅 조합</span><span class="tag">세로 한 손</span><span class="tag">개발 중 · v1.4</span></div>
     <p class="lead">스타크래프트 유즈맵 "랜덤블러드"를 모바일 세로 화면으로. 왕은 무적이지만 캐슬은 하나뿐 — 병사는 등급 확률로 나오고, 같은 병사 셋은 한 등급 위로 합성, 병사를 재료로 영웅을 조합해 마지막 1명이 될 때까지 싸워요. 매판 다른 군단, 판이 끝날수록 유물로 체급이 올라요.</p>
 
     <div class="split" style="margin-top:1rem">
@@ -41,7 +41,7 @@
         </div>
         <div class="player-bar">
           <span>처음 받을 때 약 40MB</span>
-          <a href="play/?v=20261021160703" target="_blank" rel="noopener">전체 화면 ↗</a>
+          <a href="play/?v=20261021162021" target="_blank" rel="noopener">전체 화면 ↗</a>
         </div>
       </div>
       <div style="display:grid;gap:1.25rem">
@@ -55,9 +55,10 @@
             <tr><th>캐슬</th><td>내 캐슬을 눌러 캐슬 강화 · 공성 병기</td></tr>
             <tr><th>스킬</th><td>덱의 스킬 2개: 마법은 내 영지 안에서만 (수비), 방책은 광장 · 길에도 세움 (돈을 내고 써요)</td></tr>
             <tr><th>왕국 줄</th><td>위쪽 왕국 6칸: 다른 왕국 = 동맹 신청 · 배신, 내 왕국 = 어디서든 강화 · 지도 아래 [순위] = 실시간 순위</td></tr>
+            <tr><th>확대</th><td>두 손가락 벌리기 · 오므리기, 또는 오른쪽 아래 [-][+]</td></tr>
             <tr><th>집결</th><td>깃발 버튼: 싸움을 멈추고 모두 왕에게 달려와요</td></tr>
           </table>
-          <p class="soon" style="margin:.6rem 0 0">처음 켜면 튜토리얼부터 시작해요. 휴대폰은 <a href="play/?v=20261021160703" target="_blank" rel="noopener">전체 화면</a>이 가장 편해요.</p>
+          <p class="soon" style="margin:.6rem 0 0">처음 켜면 튜토리얼부터 시작해요. 휴대폰은 <a href="play/?v=20261021162021" target="_blank" rel="noopener">전체 화면</a>이 가장 편해요.</p>
         </div>
         <div class="box panel">
           <h3>게임 정보</h3>
@@ -178,6 +179,7 @@
         <li><span class="v">v1.1 UI 다듬기</span><span>"촌스럽다 · 상세가 이상하다 · 카드를 누르자마자 업그레이드가 눌린다" 원안 → 남색 + 금 UI 겉모습을 스크립트로 새로, 도감 정렬 (등급 · 레벨 · 강화 가능 · 보유만), 상세 창 · 설정 창 새로, 창이 열린 직후 누름 막기, 진화 나무 · 업그레이드 카드 코드 정리, 영웅 스킬 2 ~ 4개 (각성 · 무기 · 초월)</span></li>
         <li><span class="v">v1.2 영웅 다시 짜기</span><span>"영웅이 너무 쉽게 빨리 나와 · 영웅 범벅" 원안 → 영웅 등급 통일 · 영웅마다 다른 조합식 (가치 같게) · 강화 루트 4가지 · 개별 조작 없앰 · 32px 전신 영웅 그림. 자동 대전으로 조합식을 다섯 번 맞춰 "신규 10분 약 3명 · 스펙업하면 10명"에 맞춤 (자동 합성이 조합 재료를 먹어 버리던 문제도 찾아 고침)</span></li>
         <li><span class="v">v1.3 영웅 UI · 궁극기</span><span>"조작은 아래 · 필드 영웅을 한눈에 · 사거리 정보 정확히 · 운빨존많겜처럼" 원안 → 누르는 UI를 모두 아래로, 필드 영웅 아이콘 줄, 운빨존많겜식 조합 창 · 4칸 강화 창, 영웅 궁극기 (게이지 10번 · 강화 루트별 4종)</span></li>
+        <li><span class="v">v1.4 경고 · 확대</span><span>"누가 나를 노리면 경고 · 줌인 줌아웃" 원안 → 노림 경고 (빨간 글 · 왕국 칸 깜빡 · 화면 가장자리 방향 화살표), 두 손가락 · 휠 · [-][+] 확대 0.75 ~ 2배</span></li>
       </ol>
     </div>
   </section>
@@ -195,6 +197,8 @@
       <figure class="box"><img src="img/11j_hero_gamble.png" width="540" height="960" alt="영웅 강화 · 초월 · 희생" loading="lazy"><figcaption>영웅 ★ 강화 · 희생 · 개별 명령</figcaption></figure>
       <figure class="box"><img src="img/11k_hero_list.png" width="540" height="960" alt="보유 영웅 전체 목록" loading="lazy"><figcaption>조합 창 (재료 카드 · 진행률)</figcaption></figure>
       <figure class="box"><img src="img/11l_upgrades.png" width="540" height="960" alt="4칸 강화 창" loading="lazy"><figcaption>4칸 강화</figcaption></figure>
+      <figure class="box"><img src="img/11m_threat.png" width="540" height="960" alt="노림 경고" loading="lazy"><figcaption>노림 경고</figcaption></figure>
+      <figure class="box"><img src="img/11n_zoom.png" width="540" height="960" alt="확대" loading="lazy"><figcaption>확대 (두 손가락 · [+])</figcaption></figure>
       <figure class="box"><img src="img/11b_skills_monster.png" width="540" height="960" alt="방책과 신화 괴수" loading="lazy"><figcaption>방책 · 신화 괴수 · 입체 캐슬</figcaption></figure>
       <figure class="box"><img src="img/11c_ranking.png" width="540" height="960" alt="실시간 왕국 순위" loading="lazy"><figcaption>실시간 순위</figcaption></figure>
       <figure class="box"><img src="img/11d_hero_info.png" width="540" height="960" alt="영웅 조합식" loading="lazy"><figcaption>영웅 조합식</figcaption></figure>
@@ -228,7 +232,7 @@
   document.getElementById("start").addEventListener("click", function () {
     var screen = document.getElementById("screen");
     var frame = document.createElement("iframe");
-    frame.src = "play/?v=20261021160703";
+    frame.src = "play/?v=20261021162021";
     frame.title = "운빨블러드 게임";
     frame.allow = "autoplay; fullscreen; gamepad";
     screen.replaceChildren(frame);
