@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>운빨블러드 · Habong</title>
-<meta name="description" content="한 손으로 6명이 눈치 보며 싸우는 도트 왕국 전쟁. 빌드를 골라 상성으로 대응하고, 공통 미션으로 보석을 모아 덱의 영웅을 불러요. 브라우저에서 바로 플레이.">
+<meta name="description" content="한 손으로 6명이 싸우는 운빨 도트 왕국 전쟁. 병사는 확률로 나오고, 같은 병사 셋을 합성하고, 병사를 재료로 영웅을 조합해요. 브라우저에서 바로 플레이.">
 <meta property="og:title" content="운빨블러드">
 <meta property="og:description" content="한 손으로 6명이 눈치 보며 싸우는 도트 왕국 전쟁">
 <meta property="og:image" content="https://habong96.github.io/games/lucky-blood/img/cover.png">
@@ -19,6 +19,7 @@
     <a class="logo" href="../../">Ha<span>bong</span></a>
     <nav class="nav" aria-label="메뉴">
       <a href="#play">플레이</a>
+      <a href="#pivot">기획 개선</a>
       <a href="#design">기획 포인트</a>
       <a href="#history">만든 과정</a>
       <a href="#shots">스크린샷</a>
@@ -29,8 +30,8 @@
 <main class="wrap">
   <section id="play" style="padding-top:2rem">
     <h1>운빨블러드</h1>
-    <div class="tags"><span class="tag">6인 실시간 전략</span><span class="tag">빌드 · 상성</span><span class="tag">영웅 덱 · 미션</span><span class="tag">세로 한 손</span><span class="tag">개발 중</span></div>
-    <p class="lead">스타크래프트 유즈맵 "랜덤블러드"를 모바일 세로 화면으로. 왕은 무적이지만 캐슬은 하나뿐 — 6개 왕국이 눈치를 보며 병력을 모으고, 빌드를 고르고, 공통 미션을 다퉈 얻은 보석으로 영웅을 불러 마지막 1명이 될 때까지 싸워요.</p>
+    <div class="tags"><span class="tag">6인 실시간 대전</span><span class="tag">확률 소환 · 합성</span><span class="tag">영웅 조합</span><span class="tag">세로 한 손</span><span class="tag">개발 중 · v1.0</span></div>
+    <p class="lead">스타크래프트 유즈맵 "랜덤블러드"를 모바일 세로 화면으로. 왕은 무적이지만 캐슬은 하나뿐 — 병사는 등급 확률로 나오고, 같은 병사 셋은 한 등급 위로 합성, 병사를 재료로 영웅을 조합해 마지막 1명이 될 때까지 싸워요. 매판 다른 군단, 판이 끝날수록 유물로 체급이 올라요.</p>
 
     <div class="split" style="margin-top:1rem">
       <div class="box player portrait">
@@ -40,7 +41,7 @@
         </div>
         <div class="player-bar">
           <span>처음 받을 때 약 40MB</span>
-          <a href="play/?v=20261021005159" target="_blank" rel="noopener">전체 화면 ↗</a>
+          <a href="play/?v=20261021130330" target="_blank" rel="noopener">전체 화면 ↗</a>
         </div>
       </div>
       <div style="display:grid;gap:1.25rem">
@@ -48,22 +49,23 @@
           <h3>조작 (한 손)</h3>
           <table>
             <tr><th>왕 이동</th><td>화면을 터치한 곳으로 왕이 달려가고, 병사 · 영웅이 따라가며 알아서 싸워요</td></tr>
-            <tr><th>강화</th><td>내 캐슬이나 위쪽 내 왕국 칸을 눌러 돈으로 새 병사 · 캐슬 강화</td></tr>
-            <tr><th>영웅</th><td>왼쪽 아래 영웅 칸을 누르면 정보 → [소환] (보석은 공통 미션으로)</td></tr>
+            <tr><th>행운</th><td>왼쪽 위 [행운]: 돈으로 높은 등급 병사가 나올 확률 업 (판 안 유일한 투자)</td></tr>
+            <tr><th>군단</th><td>[군단] 창: 같은 병사 셋을 합성 (하나씩 · 일괄 · 자동), 지금 확률표</td></tr>
+            <tr><th>영웅</th><td>재료가 모이면 영웅 칸이 금빛 → [조합!]. 영웅을 누르면 ★ 강화 · 초월 (실패하면 사라지기도) · 희생, 땅을 누르면 그곳으로 보냄</td></tr>
+            <tr><th>캐슬</th><td>내 캐슬을 눌러 캐슬 강화 · 공성 병기</td></tr>
             <tr><th>스킬</th><td>덱의 스킬 2개: 마법은 내 영지 안에서만 (수비), 방책은 광장 · 길에도 세움 (돈을 내고 써요)</td></tr>
             <tr><th>왕국 줄</th><td>위쪽 왕국 6칸: 다른 왕국 = 동맹 신청 · 배신, 내 왕국 = 어디서든 강화 · 지도 아래 [순위] = 실시간 순위</td></tr>
             <tr><th>집결</th><td>깃발 버튼: 싸움을 멈추고 모두 왕에게 달려와요</td></tr>
-            <tr><th>업그레이드</th><td>포인트가 모일 때마다 카드 3장 — 진화 · 전직 · 특성 (끝없이)</td></tr>
           </table>
-          <p class="soon" style="margin:.6rem 0 0">처음 켜면 튜토리얼부터 시작해요. 휴대폰은 <a href="play/?v=20261021005159" target="_blank" rel="noopener">전체 화면</a>이 가장 편해요.</p>
+          <p class="soon" style="margin:.6rem 0 0">처음 켜면 튜토리얼부터 시작해요. 휴대폰은 <a href="play/?v=20261021130330" target="_blank" rel="noopener">전체 화면</a>이 가장 편해요.</p>
         </div>
         <div class="box panel">
           <h3>게임 정보</h3>
           <table>
             <tr><th>규칙</th><td>6개 왕국 (나 + AI 왕 5명), 캐슬이 무너지면 탈락, 마지막 1명이 승리. 1 · 2 · 3등만 랭크 점수</td></tr>
-            <tr><th>콘텐츠</th><td>병종 5갈래 · 전문화 15종, 공성 병기 2종, 이름 있는 영웅 32명 (보석 1 ~ 7, 신화 4), 공통 미션 4종, 스킬 9종 (마법 4 · 방책 5), 신화 괴수 3종, 캐슬 3단계, 병종 85종 (갈래 7 · 정예 42 · 전설 7 · 신화 7)</td></tr>
+            <tr><th>콘텐츠</th><td>병사 등급 5단계 (일반 ~ 신화) · 병종 85종 (갈래 7), 이름 있는 영웅 32명 (조합식 7급, 신화 4), 숨겨진 미션 8개, 공통 미션 4종, 스킬 9종 (마법 4 · 방책 5), 신화 괴수 3종, 공성 병기 2종, 캐슬 3단계</td></tr>
             <tr><th>후반</th><td>10분 버닝 (생산 · 돈 ×2, 캐슬 피해 ×3), 침략 괴수, 무너진 왕국의 언데드 제단, 1등 현상금</td></tr>
-            <tr><th>판 밖</th><td>뽑기 (안 가진 카드 먼저 · 천장 · 확률 공개) · 강화 미리 보기 · 영웅 전용 보물 21종 · 시즌 패스 · 퀘스트 (일일 · 주간 · 업적) · 레벨 길 · 출석 · 상점 · 14일 시즌 랭킹 (실제 결제 없음)</td></tr>
+            <tr><th>판 밖</th><td>유물 8종 (최대 인구 · 시작 돈 · 시작 행운 · 공격 · 대박 합성 …) · 뽑기 (안 가진 카드 먼저 · 천장 · 확률 공개) · 강화 미리 보기 · 영웅 전용 보물 21종 · 시즌 패스 · 퀘스트 (일일 · 주간 · 업적) · 레벨 길 · 출석 · 상점 · 14일 시즌 랭킹 (실제 결제 없음)</td></tr>
             <tr><th>만든 도구</th><td>Godot 4 · 270x480 세로 도트 화면, 그림 · 소리 · 전장은 모두 스크립트로 생성</td></tr>
             <tr><th>상태</th><td>1차 틀 · 개발 중 (온라인 6인 대전은 나중에)</td></tr>
           </table>
@@ -72,21 +74,61 @@
     </div>
   </section>
 
+  <section id="pivot">
+    <h2>기획 개선: 전략 게임 → 운빨 · 성장 게임 (v1.0)</h2>
+    <p class="lead">v0.7까지 영웅 32명 · 병종 85종을 넣었는데도 플레이할수록 지루했어요. 레퍼런스(운빨존많겜)를 직접 플레이하며 <b>"왜 한 판 더 누르게 되나"</b>를 분석하고, 콘텐츠를 더하는 대신 <b>핵심 루프</b>를 바꿨어요.</p>
+    <div class="cols">
+      <div class="box panel">
+        <h3>전 → 문제</h3>
+        <table>
+          <tr><th>전</th><td>모두 같은 병종이 나오고, 포인트로 업그레이드 카드 (진화 · 전직)를 골라 상성 대응. 영웅은 덱 4명을 보석으로 소환</td></tr>
+          <tr><th>문제 1</th><td>결과가 전략 · 실력으로 정해져 <b>이기는 메타가 고정</b> → 금방 지루함</td></tr>
+          <tr><th>문제 2</th><td>모두 내가 고른 대로 나와 <b>기대할 순간 (대박)</b>이 없음</td></tr>
+          <tr><th>문제 3</th><td>누구나 같은 길 → <b>"이론상 최고의 판"</b>을 꿈꿀 수 없음</td></tr>
+          <tr><th>문제 4</th><td>판 밖 성장이 판 안 체감으로 약하게 이어짐 · 생각할 게 많아 가볍게 즐기기 어려움</td></tr>
+        </table>
+      </div>
+      <div class="box panel">
+        <h3>분석 → 개선</h3>
+        <table>
+          <tr><th>기대</th><td>병사가 확률로 나옴 → <b>등급 확률 소환</b> (일반 80% ~ 신화 0.01%), 판 안 투자는 <b>행운</b> 하나</td></tr>
+          <tr><th>쌓는 재미</th><td>같은 병사 셋 → 한 등급 위 <b>합성</b> (자동 · 일괄)</td></tr>
+          <tr><th>핵심 재미</th><td>병사를 재료로 <b>영웅 조합</b> (수 제한 없이), 골라서 원하는 곳으로 <b>개별 명령</b></td></tr>
+          <tr><th>뽕맛</th><td>영웅 ★ 강화 · <b>초월 (실패하면 사라지기도)</b> · 병사 희생</td></tr>
+          <tr><th>깜짝 보상</th><td><b>숨겨진 미션</b> 8개 (합성 10번 · 첫 전설 · 도박사의 눈물 …)</td></tr>
+          <tr><th>체급 성장</th><td><b>유물 8종</b> (최대 인구 · 시작 행운 · 대박 합성 …) — 운빨이지만 판이 끝날수록 유리</td></tr>
+          <tr><th>지킨 것</th><td>6인 대전 · 1등 · 동맹 · 배신 — "운빨존많겜 복제"가 아니라 "운빨 + 블러드"</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="box panel" style="margin-top:1.25rem">
+      <h3>결과 (자동 대전 시뮬레이션으로 측정 · 사람 지표는 체험단에서)</h3>
+      <table>
+        <tr><th>판 길이</th><td>약 6 ~ 9분 (목표 5 ~ 7분)</td></tr>
+        <tr><th>합성</th><td>왕국마다 7분에 80 ~ 160번 — 판의 주된 손맛</td></tr>
+        <tr><th>전설 · 신화</th><td>7분쯤 살아남은 왕국 대부분이 전설 1명 이상, 신화는 가끔 (극악 확률 유지)</td></tr>
+        <tr><th>찾아서 고친 것</th><td>AI가 병사를 전부 싼 영웅으로 바꿈 (영웅 20 · 병사 0) → 조합 재료 늘림 · 같은 영웅은 재료 +1 / 합성으로 군단이 안 커져 10분에도 승부가 안 남 → 생산 간격 2.0 → 1.3초</td></tr>
+        <tr><th>다음에 잴 것</th><td>"다시 하기" 비율 60%↑ · 판마다 전설을 본 비율 40%↑ · 첫 신화까지 판 수 · 유물 레벨과 평균 등수</td></tr>
+      </table>
+    </div>
+  </section>
+
   <section id="design">
     <h2>기획 포인트</h2>
-    <p class="lead">"가만히 있으면 도태된다" — 모으기만 하면 포인트가 안 오르고, 싸우면 남 좋은 일이 될 수도 있는 눈치 싸움이 핵심이에요.</p>
+    <p class="lead">"이번 판은 대박일지도" — 매판 다른 군단이 운으로 만들어지고, 그 군단으로 5개 왕국과 눈치 싸움을 해요.</p>
     <div class="pillars">
       <div class="box pillar"><div class="n">공평한 6각형</div><p>6개 왕국이 정6각형으로 광장을 둘러싸 모두 같은 거리. 영지는 해자로 막혀 다리로만 나감</p></div>
-      <div class="box pillar"><div class="n">빌드 = 카드 3장</div><p>창병 · 궁수 · 기병 → 전문화 9종 → 군대 특성. 고를 때마다 선택지 3개</p></div>
-      <div class="box pillar"><div class="n">상성으로 대응</div><p>보병 → 기병 → 원거리 → 보병 (1.6배). 화면 위에 다른 왕국의 병종이 보여 보고 대응</p></div>
-      <div class="box pillar"><div class="n">판 안엔 운 없음</div><p>영웅은 덱에서 골라 보석으로. 보석은 1분마다 떨어지는 공통 미션을 먼저 해낸 왕국이 가짐</p></div>
-      <div class="box pillar"><div class="n">운은 판 밖에서</div><p>뽑기 · 업그레이드는 로비에서. 판 안 AI 왕국은 내 평균 카드 레벨 ±1로 맞춰 공정하게</p></div>
+      <div class="box pillar"><div class="n">확률 소환</div><p>병사가 한 명씩 등급 확률로 — 일반 80% · 희귀 17% · 영웅 2.8% · 전설 0.19% · 신화 0.01%. 덱 갈래 3개 안에서 병종도 무작위</p></div>
+      <div class="box pillar"><div class="n">행운 하나만</div><p>판 안 투자는 돈 → 행운 (높은 등급 확률 업) 하나. 생각할 건 줄이고 기대는 키움</p></div>
+      <div class="box pillar"><div class="n">합성</div><p>같은 병사 셋 → 한 등급 위 병사 하나 (무작위). 유물 연금 저울이면 가끔 두 단계 위 "대박 합성"</p></div>
+      <div class="box pillar"><div class="n">영웅 조합 · 도박</div><p>영웅마다 조합식 (병사 재료). 보석으로 ★ 강화 (70%) · ★5에서 초월 (35%, 실패의 15%는 영웅이 사라짐)</p></div>
       <div class="box pillar"><div class="n">신화 괴수</div><p>2분마다 광장에 미노타우로스 · 키클롭스 · 펜리르. 막타는 보석 · 일시 축복, 괴수는 전력 1등을 노리고, 1등이 잡으면 축복이 짧음</p></div>
-      <div class="box pillar"><div class="n">끝없는 빌드</div><p>진화 · 전직 카드가 끝없이 — 남의 루트를 보고 상대를 이기는 병종으로 갈아탐. 업그레이드는 새 병사부터라 군대가 섞임</p></div>
+      <div class="box pillar"><div class="n">숨겨진 미션</div><p>처음엔 안 보이는 8개 — 행운 업 5번 · 합성 10번 · 첫 전설 · 영웅 강화 실패 3번 (도박사의 눈물) … 판 중간의 작은 도파민</p></div>
+      <div class="box pillar"><div class="n">유물 8종</div><p>판 끝 등수만큼 유물 조각 → 최대 인구 · 시작 돈 · 시작 행운 · 공격 · 캐슬 · 대박 합성 · 강화 성공률 · 처치 돈. AI는 내 유물 평균으로 공정하게</p></div>
       <div class="box pillar"><div class="n">동맹과 배신</div><p>1등을 막으려 손잡고, 약해지면 배신. 배신자는 2분 동안 외톨이, 남은 왕국이 둘이면 동맹은 끝</p></div>
       <div class="box pillar"><div class="n">후반은 급하게</div><p>10분 버닝 · 숨어 있는 왕국을 노리는 침략 괴수 · 무너진 자리의 언데드 군단 — 버티기보다 과감하게</p></div>
       <div class="box pillar"><div class="n">뒷길 · 직통 길</div><p>가운데 광장 말고도 전장 바깥을 크게 도는 뒷길로 뒤통수, 이웃 왕국과는 좁은 직통 길 — 지킬 입구가 늘어 견제가 다양</p></div>
-      <div class="box pillar"><div class="n">영웅 32명</div><p>사기적일수록 보석이 비쌈 — 감염시키는 좀비 · 해골을 일으키는 강령술사 · 죽어도 부활하는 불사조 · 공포를 거는 마왕 · 화룡</p></div>
+      <div class="box pillar"><div class="n">영웅 32명</div><p>사기적일수록 조합 재료가 비쌈 —감염시키는 좀비 · 해골을 일으키는 강령술사 · 죽어도 부활하는 불사조 · 공포를 거는 마왕 · 화룡</p></div>
       <div class="box pillar"><div class="n">처음엔 빠르게</div><p>판마다 10번 뽑기, 안 가진 카드가 먼저 나와 오픈은 빠르게 · 그 뒤는 중복으로 강화. AI도 내가 가진 카드 수준으로</p></div>
       <div class="box pillar"><div class="n">성은 단단하게</div><p>캐슬은 사거리가 길고 여러 발 — 초반에 쳐들어가면 점수를 퍼 줌. 5분 뒤엔 결전 (캐슬 피해 2배)</p></div>
     </div>
@@ -105,8 +147,8 @@
         <ul>
           <li>병력을 모았다가 가깝고 약한 왕국을 노림 (나만 노리지 않음)</li>
           <li>많이 잃으면 물러나 다시 모으고, 집이 공격받으면 돌아가 지킴</li>
-          <li>주변 왕국 빌드를 보고 상성으로 병종을 고름</li>
-          <li>적이 모인 곳에 돈을 내고 마법, 보석이 되면 덱의 비싼 영웅부터, 분수 미션엔 병력을 데리고 나섬</li>
+          <li>돈은 행운부터, 병사가 넉넉하면 비싼 영웅부터 조합 (군단을 다 영웅으로 바꾸지 않게 참음)</li>
+          <li>보석으로 영웅 ★ 강화 도박, 적이 모인 곳에 마법, 분수 미션엔 병력을 데리고 나섬</li>
         </ul>
       </div>
     </div>
@@ -131,6 +173,7 @@
         <li><span class="v">진입 장벽</span><span>"오픈부터 너무 어렵다 · 기본 캐릭터로 밀린다" 원안 → 판마다 소환권 10장 이상, 안 가진 카드 먼저, AI도 내 카드 기준, 화면 전부 찍어 UI 겹침 정리</span></li>
         <li><span class="v">신화 · 지도</span><span>"신화급도" 원안 → 신화 등급 (영웅 제우스 · 하데스 · 오딘 · 미카엘, 갈래마다 신화 병종), 도적 · 야수 갈래. "뒷길 · 옆 기지 직통" 원안 → 전장 960 · 바깥 고리 · 직통 길 · AI 뒤통수</span></li>
         <li><span class="v">최적화</span><span>휴대폰 수준(CPU 4배 느리게)으로 측정 → 웹의 파일 찾기가 CPU 20% → 그림을 기억해 느린 프레임 18ms → 6ms</span></li>
+        <li><span class="v">v1.0 운빨 전환</span><span>"전략이라 금방 지루하다" 원안 → 레퍼런스 플레이 분석으로 루프 교체: 확률 소환 · 행운 · 합성 · 영웅 조합 · 강화 도박 · 숨겨진 미션 · 유물. 자동 대전으로 밸런스를 잡고 튜토리얼 · 영웅 칸 · 덱 탭을 새 구조에 맞춤 (<a href="#pivot">기획 개선</a>)</span></li>
       </ol>
     </div>
   </section>
@@ -141,11 +184,15 @@
       <figure class="box"><img src="img/01_logo.png" width="540" height="960" alt="Habong 로고" loading="lazy"><figcaption>Habong 로고</figcaption></figure>
       <figure class="box"><img src="img/02_loading.png" width="540" height="960" alt="로딩 화면" loading="lazy"><figcaption>로딩</figcaption></figure>
       <figure class="box"><img src="img/03_tutorial_welcome.png" width="540" height="960" alt="튜토리얼" loading="lazy"><figcaption>튜토리얼</figcaption></figure>
-      <figure class="box"><img src="img/06b_upgrade_cards.png" width="540" height="960" alt="업그레이드 카드 3장" loading="lazy"><figcaption>빌드 고르기</figcaption></figure>
-      <figure class="box"><img src="img/10_battle.png" width="540" height="960" alt="적 캐슬 공격" loading="lazy"><figcaption>영웅 칸 · 공통 미션</figcaption></figure>
+      <figure class="box"><img src="img/06b_tutorial_merge.png" width="540" height="960" alt="군단 창과 합성" loading="lazy"><figcaption>군단 · 합성</figcaption></figure>
+      <figure class="box"><img src="img/06c_tutorial_luck.png" width="540" height="960" alt="행운 올리기 튜토리얼" loading="lazy"><figcaption>행운 (확률 업)</figcaption></figure>
+      <figure class="box"><img src="img/10_battle.png" width="540" height="960" alt="영웅 조합 성공과 숨겨진 미션" loading="lazy"><figcaption>영웅 조합 · 숨겨진 미션</figcaption></figure>
+      <figure class="box"><img src="img/11h_army.png" width="540" height="960" alt="군단 창 (등급별 병사 · 확률표)" loading="lazy"><figcaption>군단 · 확률표</figcaption></figure>
+      <figure class="box"><img src="img/11j_hero_gamble.png" width="540" height="960" alt="영웅 강화 · 초월 · 희생" loading="lazy"><figcaption>영웅 ★ 강화 · 희생 · 개별 명령</figcaption></figure>
       <figure class="box"><img src="img/11b_skills_monster.png" width="540" height="960" alt="방책과 신화 괴수" loading="lazy"><figcaption>방책 · 신화 괴수 · 입체 캐슬</figcaption></figure>
       <figure class="box"><img src="img/11c_ranking.png" width="540" height="960" alt="실시간 왕국 순위" loading="lazy"><figcaption>실시간 순위</figcaption></figure>
-      <figure class="box"><img src="img/11d_hero_info.png" width="540" height="960" alt="영웅 정보" loading="lazy"><figcaption>영웅 정보</figcaption></figure>
+      <figure class="box"><img src="img/11d_hero_info.png" width="540" height="960" alt="영웅 조합식" loading="lazy"><figcaption>영웅 조합식</figcaption></figure>
+      <figure class="box"><img src="img/24_relics.png" width="540" height="960" alt="유물 8종" loading="lazy"><figcaption>유물 8종</figcaption></figure>
       <figure class="box"><img src="img/11g_burning_undead.png" width="540" height="960" alt="버닝 모드와 언데드 제단" loading="lazy"><figcaption>버닝 · 언데드 제단 · 침략</figcaption></figure>
       <figure class="box"><img src="img/11i_kingdom.png" width="540" height="960" alt="왕국 창 (동맹 신청 · 루트)" loading="lazy"><figcaption>동맹 신청 · 남의 루트</figcaption></figure>
       <figure class="box"><img src="img/21_pass.png" width="540" height="960" alt="시즌 패스" loading="lazy"><figcaption>시즌 패스</figcaption></figure>
@@ -175,7 +222,7 @@
   document.getElementById("start").addEventListener("click", function () {
     var screen = document.getElementById("screen");
     var frame = document.createElement("iframe");
-    frame.src = "play/?v=20261021005159";
+    frame.src = "play/?v=20261021130330";
     frame.title = "운빨블러드 게임";
     frame.allow = "autoplay; fullscreen; gamepad";
     screen.replaceChildren(frame);
